@@ -1,5 +1,7 @@
 // Este es el punto de entrada de tu aplicacion
 
-import { myFunction } from './lib/index.js';
+import { createUser } from './lib/index.js';
 
-myFunction();
+createUser('genesis@genesis.com', '123456');
+
+console.log('algosss');
