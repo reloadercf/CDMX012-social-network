@@ -2,18 +2,21 @@ import { onNavigate } from '../main.js';
 import { LoginEmail } from '../lib/auth.js';
 
 export const Login = () => {
-  const HomeDiv = document.createElement('div');
+  const HomeSection = document.createElement('section');
   const inputEmail = document.createElement('input');
   const inputPassword = document.createElement('input');
   const buttonLogin = document.createElement('button');
   const buttonHome = document.createElement('button');
-
+  const titleLogin = document.createElement('h3');
+  HomeSection.classList.add('container');
+  buttonLogin.classList.add('btnCTA');
+  buttonHome.classList.add('btnSecondary');
   inputEmail.type = 'email';
   inputPassword.type = 'password';
-  buttonLogin.innerText = 'Registrar';
-  inputEmail.placeholder = 'Escribe tu email';
+  buttonLogin.innerText = 'Entrar';
+  inputEmail.placeholder = 'Escribe tu correo';
   inputPassword.placeholder = 'Escribe tu contraseña';
-  HomeDiv.textContent = 'Bienvenida al Login';
+  titleLogin.textContent = 'Bienvenidx al Login';
   buttonHome.textContent = 'Regresar al Home';
 
   buttonLogin.addEventListener('click', () => {
@@ -26,7 +29,7 @@ export const Login = () => {
       console.log(error);
     });
   });
-  HomeDiv.appendChild(buttonHome);
-  HomeDiv.append(buttonHome, inputEmail, inputPassword, buttonLogin);
-  return HomeDiv;
+  HomeSection.appendChild(buttonHome);
+  HomeSection.append(titleLogin, inputEmail, inputPassword, buttonLogin,buttonHome);
+  return HomeSection;
 };
