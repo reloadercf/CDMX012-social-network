@@ -14,8 +14,8 @@ export const Login = () => {
   inputEmail.type = 'email';
   inputPassword.type = 'password';
   buttonLogin.innerText = 'Entrar';
-  inputEmail.placeholder = 'Escribe tu correo';
-  inputPassword.placeholder = 'Escribe tu contraseña';
+  inputEmail.placeholder = ' Escribe tu correo';
+  inputPassword.placeholder = ' Escribe tu contraseña';
   titleLogin.textContent = 'Bienvenidx al Login';
   buttonHome.textContent = 'Regresar al Home';
 
@@ -30,6 +30,6 @@ export const Login = () => {
     });
   });
   HomeSection.appendChild(buttonHome);
-  HomeSection.append(titleLogin, inputEmail, inputPassword, buttonLogin,buttonHome);
+  HomeSection.append(titleLogin, inputEmail, inputPassword, buttonLogin, buttonHome);
   return HomeSection;
 };

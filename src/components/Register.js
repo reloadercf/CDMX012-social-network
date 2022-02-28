@@ -14,8 +14,8 @@ export const Register = () => {
   inputEmail.type = 'email';
   inputPassword.type = 'password';
   buttonRegister.innerText = 'Registrar';
-  inputEmail.placeholder = 'Escribe tu correo';
-  inputPassword.placeholder = 'Escribe tu contraseña';
+  inputEmail.placeholder = ' Escribe tu correo';
+  inputPassword.placeholder = ' Escribe tu contraseña';
 
   titleRegister.textContent = 'Bienvenidx al Register';
   buttonHome.textContent = 'Regresar al Home';
