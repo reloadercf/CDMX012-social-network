@@ -5,9 +5,10 @@ import { ListPost } from './Post/ListPosts.js';
 
 export const Wall = () => {
   const HomeDiv = document.createElement('div');
-  const exitButton = document.createElement('button');
-  exitButton.textContent = 'Cerrar sesión';
-  exitButton.addEventListener('click', () => {
+  const exitImg = document.createElement('img');
+  exitImg.src = 'https://img.icons8.com/external-sbts2018-outline-sbts2018/58/ff2f5f/external-logout-social-media-basic-1-sbts2018-outline-sbts2018.png';
+  exitImg.classList.add('logout');
+  exitImg.addEventListener('click', () => {
     exit().then((result) => {
       console.log('Fuera');
     }).catch((err) => {
@@ -15,6 +16,6 @@ export const Wall = () => {
     });
   });
 
-  HomeDiv.append(CreatePost(), ListPost(), exitButton);
+  HomeDiv.append(CreatePost(), ListPost(), exitImg);
   return HomeDiv;
 };
