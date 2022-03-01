@@ -1,5 +1,4 @@
 body{
-    /* background: #00ad83;*/
     background-color: #ffecec;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0;
@@ -23,10 +22,7 @@ body{
     margin-bottom: 15px;
 }
 
-.btnCTA{
-    background-color: #ff2f5f;
-    color: #fff;
-}
+.btnCTA{ background-color: #ff2f5f; color: #fff; }
 
 .btnSecondary{
     background-color: #fff;
@@ -34,7 +30,9 @@ body{
     color: #ff005b;
 }
 
-.container input{
+.container input{ width: 100%; }
+
+.container input, textarea{
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -49,4 +47,16 @@ body{
     color: #4e5c6b;
     margin: 0 auto 5% auto;
     text-align: center;
+}
+
+textarea{ width: 99%; height: 80px; }
+
+figure{ text-align: right; }
+
+.icon{ width:30px; margin-right: 0px; }
+
+.container h4{
+    color: #4e5c6b;
+    margin: 0 auto 5% auto;
+    text-align: left;
 }
