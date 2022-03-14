@@ -1,5 +1,5 @@
 import { onSnapshot } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js';
-import { refPost } from '../../lib/post.js';
+import { refPost, auth } from '../../lib/post.js';
 import { DeletePost } from './DeletePost.js';
 
 export const ListPost = () => {
@@ -31,8 +31,11 @@ export const ListPost = () => {
       btnEdit.appendChild(imgEdit);
       h4.textContent = doc.data().text;
       iconsContainer.append(btnEdit, btnDelete);
-      postContainer.append(h4, iconsContainer);
+      postContainer.append(h4);
       PostListSection.appendChild(postContainer);
+      if (auth.currentUser.email === doc.data().email) {
+        postContainer.append(iconsContainer);
+      }
     });
     const arrayBtnsDelete = document.querySelectorAll('.btnDelete');
     DeletePost(arrayBtnsDelete);
