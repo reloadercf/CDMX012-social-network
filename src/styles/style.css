@@ -51,8 +51,6 @@ body{
 
 textarea{ width: 99%; height: 80px; }
 
-figure{ text-align: right; }
-
 .icon{ width:30px; margin-right: 0px; }
 
 .container h4{
@@ -65,5 +63,9 @@ figure{ text-align: right; }
     position: absolute;
     top: 10px;
     right: 10px;
-    position: fixed
+    position: fixed;
+    width: 35px;
 }
+
+.btnDelete, .btnEdit{ background-color: #fff; border: 0px;}
+.iconsContainer{text-align: right;}

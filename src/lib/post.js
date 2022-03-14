@@ -1,5 +1,5 @@
 import {
-  collection, addDoc, getFirestore, Timestamp, query, orderBy,
+  collection, addDoc, getFirestore, Timestamp, query, orderBy, deleteDoc, doc,
 } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js';
 import { getAuth } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-auth.js';
 
@@ -17,3 +17,7 @@ export const createPost = async (text) => {
 };
 
 export const refPost = () => query(collection(db, 'posts'), orderBy('dateCreate', 'desc'));
+
+export const deletePost = async (id) => {
+  await deleteDoc(doc(db, 'posts', id));
+};
