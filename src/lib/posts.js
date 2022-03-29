@@ -67,7 +67,7 @@ export function getPosts() {
   onSnapshot(q, (snapshot) => {
     snapshot.docChanges().forEach((change) => {
       if (change.type === 'added') {
-        console.log('New post: ', change.doc.data());
+        /* console.log('New post: ', change.doc.data()); */
         getOpData(change.doc.data());
       }
       if (change.type === 'modified') {
