@@ -34,3 +34,4 @@ export const orderBy = () => Promise.resolve({});
 export const serverTimestamp = () => Promise.resolve({});
 export const collection = () => Promise.resolve({});
 export const signOut = () => Promise.resolve({});
+export const getDocs = () => Promise.resolve({});

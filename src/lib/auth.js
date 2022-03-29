@@ -3,7 +3,7 @@
 import {
   getAuth, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider,
   FacebookAuthProvider, GithubAuthProvider, getAdditionalUserInfo, signInWithEmailAndPassword,
-  signOut,
+  signOut, onAuthStateChanged,
 } from '../firebase-imports.js';
 import { app } from './firebase-config.js';
 import { onNavigate } from '../app.js';
@@ -30,8 +30,6 @@ export const createAccount = (email, pass) => {
   createUserWithEmailAndPassword(auth, email, pass)
     .then((userCredential) => {
       askMoreInfo(userCredential);
-      /* const user = userCredential.user;
-      console.log(user); */
       errorA.innerHTML = '';
     })
     .catch((error) => {
@@ -109,6 +107,20 @@ export const signUpGithub = () => {
 // sign in with email and password in welcome back page
 export const signInAccount = (email, pass) => signInWithEmailAndPassword(auth, email, pass);
 
-// Sign Out
+// current user
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    const uid = user.uid;
+    const displayName = user.displayName;
+    const email = user.email;
 
+    console.log(`${displayName} - ${email} - ${uid}`);
+    onNavigate('/home');
+  } else { // User is signed out
+    console.log('User signed out');
+    onNavigate('/');
+  }
+});
+
+// Sign Out
 export const signOutBR = () => signOut(auth);

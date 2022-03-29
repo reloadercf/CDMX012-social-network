@@ -36,9 +36,9 @@ export const createPosts = (postData, currentUid, name, username) => {
 
   // ¿le di like a un post?
   let doIlikePost = false;
-  console.log(postData.likes);
+  /* console.log(postData.likes); */
   const sessionUser = currentUser();
-  console.log(sessionUser.uid);
+  /* console.log(sessionUser.uid); */
   if (postData.likes.includes(sessionUser.uid)) {
     doIlikePost = true;
   }
@@ -90,7 +90,7 @@ export const createPosts = (postData, currentUid, name, username) => {
         dropdownContainer.classList.toggle('show'); // Agregue nuevamente esta linea aquí para que al dar click en Delete el dropdowm desaparezca
         const result = window.confirm('Are you sure you want to delete this post?');
         if (result) {
-          deletePost(postData.key);
+          deletePost(postData.idDocument);
         }
       });
     });
@@ -110,7 +110,10 @@ export const createPosts = (postData, currentUid, name, username) => {
 
   post.append(infoUserPost, nodeTobeEdited, like);
   const postArea = document.querySelector('#postsArea');
-  postArea.append(post);
+  // postArea.insert(post);
+
+  const fatherNode = document.querySelector('.feed-content');
+  fatherNode.insertBefore(post, fatherNode.children[4]);
 
   return postArea;
 };
