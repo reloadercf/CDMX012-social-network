@@ -40,7 +40,7 @@ export async function saveNewPostData(postsForm) {
 }
 
 // Separar responsabilidades de las funciones, estas de acá solo para lidiar con firestore
-async function getOpData(post) {
+async function  (post) {
   const auth = getAuth(app); // Current user
   const user = auth.currentUser;
 
