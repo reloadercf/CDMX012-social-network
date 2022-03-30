@@ -40,7 +40,7 @@ export async function saveNewPostData(postsForm) {
 }
 
 // Separar responsabilidades de las funciones, estas de acá solo para lidiar con firestore
-async function  (post) {
+async function getOpData(post, kind = 'first') {
   const auth = getAuth(app); // Current user
   const user = auth.currentUser;
 
@@ -56,7 +56,10 @@ async function  (post) {
     name = docu.data().name;
     username = docu.data().username;
   });
-
+  const postsArea = document.getElementById('postsArea');
+  while (postsArea.firstChild) {
+    postsArea.removeChild(postsArea.firstChild);
+  }
   createPosts(post, user.uid, name, username);
 }
 
@@ -66,12 +69,15 @@ export function getPosts() {
 
   onSnapshot(q, (snapshot) => {
     snapshot.docChanges().forEach((change) => {
+      console.warn(change.type);
       if (change.type === 'added') {
         /* console.log('New post: ', change.doc.data()); */
-        getOpData(change.doc.data());
+        getOpData(change.doc.data(), 'before');
+        console.log(change.doc.data().text);
       }
       if (change.type === 'modified') {
         console.log('Modified post: ', change.doc.data());
+        // usar 
       }
       if (change.type === 'removed') {
         console.log('Removed post: ', change.doc.data());

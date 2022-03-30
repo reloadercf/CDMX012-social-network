@@ -82,7 +82,7 @@ export const feed = () => {
   readingDescription.setAttribute('placeholder', "What's on your mind?");
 
   const newPostBtn = document.createElement('input');
-  newPostBtn.setAttribute('type', 'button');
+  newPostBtn.setAttribute('type', 'submit');
   newPostBtn.setAttribute('value', 'Share');
   newPostBtn.setAttribute('class', 'new-post-button');
   newPostBtn.setAttribute('id', 'newPostButton');
@@ -108,9 +108,11 @@ export const feed = () => {
     showAndHideItems(readingForm, makeNewPost);
   });
 
-  newPostBtn.addEventListener('click', () => {
+  newPostBtn.addEventListener('click', (e) => {
+    e.preventDefault();
     saveNewPostData(readingForm);
     showAndHideItems(makeNewPost, readingForm);
+    console.error('una vez');
   });
 
   return readingPage;

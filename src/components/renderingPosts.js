@@ -104,16 +104,16 @@ export const createPosts = (postData, currentUid, name, username) => {
       toEditable(postData, nodeTobeEdited);
       dropdownContainer.classList.toggle('show');
     });
-
-    return postArea;
+    console.warn('stop');
+    // return postArea;
   }
-
+  console.warn('avanza');
   post.append(infoUserPost, nodeTobeEdited, like);
   const postArea = document.querySelector('#postsArea');
   // postArea.insert(post);
 
   const fatherNode = document.querySelector('.feed-content');
-  fatherNode.insertBefore(post, fatherNode.children[4]);
+  fatherNode.append(post);
 
   return postArea;
 };
