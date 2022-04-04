@@ -22,7 +22,7 @@ export const eliminarPost = (elbrenditoid) => {
   const confirmar = document.createElement('button');
   confirmar.setAttribute('data-id', elbrenditoid);
   confirmar.textContent = 'Aceptar';
-  console.log(elbrenditoid);
+  
   confirmar.addEventListener('click', (e) => {
     e.preventDefault();
     borrarReceta(elbrenditoid);

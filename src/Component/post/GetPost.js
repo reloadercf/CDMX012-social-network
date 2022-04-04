@@ -9,7 +9,7 @@ export const GetPost = () => {
   alConseguirRecetas((querySnapshot) => {
     querySnapshot.forEach((doc) => {
       const publicacion = doc.data();
-      (console.log(publicacion));
+
       const post = document.createElement('div');
       post.setAttribute('class', 'post');
       post.setAttribute('id', 'post');
@@ -32,7 +32,25 @@ export const GetPost = () => {
         contmodal.style.visibility = 'visible';
         contmodal.style.opacity = '1';
         console.log(doc.id);
-        eliminarPost(doc.id);/* divPost.removeChild(post) */
+        Swal.fire({
+          title: 'Are you sure?',
+          text: "You won't be able to revert this!",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            borrarReceta(doc.id);
+            Swal.fire(
+              'Deleted!',
+              'Your file has been deleted.',
+              'success'
+            )
+          }
+        })
+        // eliminarPost(doc.id);/* divPost.removeChild(post) */
       });
 
       const editarPostBoton = document.createElement('button');

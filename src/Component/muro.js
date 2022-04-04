@@ -14,7 +14,7 @@ export const muro = () => {
 //  console.log(x.displayName);
  // });
   // console.log(datosUsuario);
-  console.log(pruebuski);
+
 
 //  const auth = getA-uth();
   const seccionMuro = document.createElement('section');
