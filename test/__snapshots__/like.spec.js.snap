@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests of like cuando click es true 1`] = `"<div class=\\"like-btn\\" id=\\"like-btn\\"><img src=\\"./assets/heart.png\\" alt=\\"like fill button\\"><span class=\\"likeCount\\">2</span></div>"`;
+
+exports[`Tests of like render like 1`] = `"<div class=\\"like-btn\\" id=\\"like-btn\\"><img src=\\"./assets/like.png\\" alt=\\"like empty button\\"><span class=\\"likeCount\\"></span></div>"`;

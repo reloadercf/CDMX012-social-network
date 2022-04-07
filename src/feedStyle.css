@@ -1,0 +1,286 @@
+@import "slideshow.css";
+@import "deleteModal.css";
+body {
+  margin: 0;
+}
+
+.readingPage {
+  background-color: white;
+}
+
+.feed-content {
+  padding: 3% 6%;
+}
+
+.post-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  border-bottom: 1px solid #e63f66;
+}
+
+.info-user-post {
+  position: relative;
+}
+
+.info {
+  padding-top: 0.5em;
+  display: flex;
+  gap: 0.5em;
+}
+
+.nameProfile-P {
+  color: #951c45;
+}
+
+.userName-P {
+  color: #8f8f8f;
+}
+
+.date-P {
+  color: #e63f66;
+}
+
+a div {
+  padding: 2px;
+}
+
+.post-content div {
+  margin-top: 0.5em;
+  display: flex;
+  gap: 1em;
+  align-content: center;
+}
+
+.book-icon {
+  width: 2.5em;
+}
+
+.to-edit {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+/* dropdown menu */
+
+.options-menu {
+  position: absolute;
+  top: auto;
+  right: 0;
+  cursor:pointer;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.editPost:hover,
+.deletePost:hover {
+  color: #951c45;
+  font-weight: bold;
+}
+
+.dropdown-container {
+  visibility: hidden;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s;
+  transform: translateY(5%);
+  opacity: 0;
+}
+
+.dropdown-container.show {
+  visibility: visible;
+  position: absolute;
+  top: 2em;
+  right: 1em;
+  transform: translateY(5%);
+  opacity: 1;
+}
+
+.dropdown {
+  border-radius: 5%;
+  background-color: #fde6e9;
+  height: fit-content;
+  position: absolute;
+  right: 5%;
+  outline: none;
+  z-index: 1;
+  padding: 0.5em 1em 0.5em 1em;
+}
+
+/* Fields edition */
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.reading-txt {
+  border: none;
+  background-color: #e5e5e5;
+  border-radius: 5px;
+  padding: 0.2em;
+  margin-bottom: 0.4em;
+  width: 100%;
+}
+
+.reading-form input,
+textarea {
+  border: none;
+  background-color: rgba(229, 229, 229, 0.7);
+
+  border-radius: 5px;
+  padding: 0.2em;
+  margin-bottom: 0.5em;
+  width: 100%;
+}
+
+.reading-form textarea {
+  height: 8em;
+  resize: none;
+}
+
+.post-content textarea {
+  width: 100%;
+}
+
+.to-edit [type="button"] {
+  margin: 2% auto;
+  border-radius: 30px;
+  border: none;
+  width: 15%;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  font-size: 0.8em;
+  color: white;
+  font-weight: bold;
+  background-color: #951c45;
+  cursor: pointer;
+}
+
+/* Like btn */
+
+.like-btn {
+  width: 8%;
+  display: flex;
+  align-self: flex-end;
+  justify-content: space-around;
+}
+
+.like-btn img {
+  width: 1.8rem;
+  cursor: pointer;
+}
+
+.logo-title img {
+  height: 30px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.like-btn img:hover {
+  transform: translateY(5px);
+}
+
+.likeCount {
+  color: #951c45;
+  font-weight: bold;
+}
+
+/* Header */
+.feed-header {
+  display: flex;
+  border-bottom: solid 1px #951c45;
+  margin-bottom: 0.3em;
+  padding-top: 0.5em;
+  width: auto;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background-color: #951c45;
+}
+
+.config-menu {
+  max-height: 20px;
+  width: auto;
+  margin-right: 5%;
+  margin-bottom: 2%;
+}
+
+/* book suggestions title */
+.bookSuggest {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 2.5%;
+  padding-left: 5%;
+}
+
+/* Make new post origninal section */
+.make-new-post {
+  border-radius: 10px;
+  border: solid 0.5px #951c45;
+  padding: 0.5em;
+  margin-top: 1.4em;
+
+  box-shadow: 0 4px 4px 0 rgb(128 128 128 / 30%);
+  display: block;
+  cursor: pointer;
+  color: #474747;
+}
+
+.make-new-post:hover,
+.make-new-post:active {
+  border: solid 0.5px #e63f66;
+}
+
+/* New post form */
+.reading-form {
+  display: none;
+  border-radius: 10px;
+  border: solid 0.5px #951c45;
+  padding: 0.5em;
+  margin-top: 1.4em;
+}
+
+.reading-area {
+  display: flex;
+}
+
+.book-title {
+  margin-left: 0.4em;
+}
+
+#newPostButton {
+  border-radius: 5px;
+  background-color: #e63f66;
+  color: white;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  width: 30%;
+  font-weight: bold;
+  align-self: flex-end;
+  margin-bottom: 0;
+  font-size: 0.9rem;
+}
+
+@media screen and (min-width: 768px) {
+  /* Header */
+  .logo-title img {
+    height: 50px;
+  }
+
+  .config-menu {
+    max-height: 40px;
+  }
+
+  /* book suggestions title */
+  .bookSuggest {
+    font-size: 20px;
+  }
+}
