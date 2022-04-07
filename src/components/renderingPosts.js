@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import { toEditable } from './edit-post.js';
 import { genericModal } from './genericModal.js';
 import { like as likeComponent } from './like.js';
@@ -40,10 +41,10 @@ export const createPosts = (postData, currentUid, name, username) => {
   const sessionUser = currentUser();
   // console.log(sessionUser.uid);
 
-  if (postData.likes.includes(sessionUser.uid)) {
+  if (postData.likes.includes(sessionUser.uid)) { // Verifica si el uid del usuario actual esta contenido dentro de los usuarios que dieron like
     doIlikePost = true;
   }
-  const like = likeComponent(
+  const like = likeComponent( // likeComponent regresa el nodo que contiene el btn de like y el contador de likes
     doIlikePost,
     postData.likes.length,
     sessionUser.uid,

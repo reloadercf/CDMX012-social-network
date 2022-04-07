@@ -5,7 +5,6 @@ function saveChanges(postData, node, newData) {
 
   updatePost(idDoc, newData).then(() => {
     // console.log('Post edited');
-    // eslint-disable-next-line no-param-reassign
     node.innerHTML = `<div class="post-content">
     <div><img src= "./assets/open-book.png" class= "book-icon"><p><strong>  ${newData.reading}</strong></p></div> <br>
     <p>${newData.text}</p>
